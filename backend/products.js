@@ -1,16 +1,4 @@
-document.addEventListener("click", function (event) {
-  if (event.target.classList.contains("add-to-cart")) {
-    const productId = event.target.dataset.productId;
-    const productName = event.target.dataset.productName;
-    const productPrice = parseFloat(event.target.dataset.productPrice);
-
-    addToCart(productId, productName, productPrice);
-  }
-});
-
-function addToCart(productId, productName, productPrice) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-  const products = [
+const products = [
     {
       id: 1,
       name: "Bơ 034 VietGap 1kg",
@@ -119,7 +107,3 @@ function addToCart(productId, productName, productPrice) {
     },
   ];
   module.exports = products;
-
-  cart.push(product);
-  localStorage.setItem("cart", JSON.stringify(cart));
-}
